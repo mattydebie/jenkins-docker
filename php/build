@@ -2,5 +2,4 @@
 
 VERSION=${1:-8.0}
 
-docker build --build-arg VERSION=${VERSION} -t mattydebie/jenkins-agent:php${VERSION} .
-docker push mattydebie/jenkins-agent:php${VERSION}
+docker build --build-arg VERSION=${VERSION} -t upthrust/jenkins-agent:php${VERSION} .
