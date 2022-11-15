@@ -2,4 +2,4 @@
 
 VERSION=${1:-8.0}
 
-docker build --build-arg VERSION=${VERSION} -t upthrust/jenkins-agent:php${VERSION} .
+docker build --build-arg VERSION=${VERSION} --build-arg UID=$(id -u jenkins) -t upthrust/jenkins-agent:php${VERSION} .

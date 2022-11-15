@@ -1,5 +1,8 @@
 FROM jenkins/agent
 ARG VERSION=8.0
+ARG UID=1000
+
+RUN usermod -u ${UID} jenkins
 
 USER root
 
