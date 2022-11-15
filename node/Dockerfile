@@ -1,4 +1,4 @@
-FROM jenkins/agent
+FROM upthrust/jenkins-agent
 ARG VERSION=16
 
 USER root
