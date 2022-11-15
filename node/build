@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-VERSION=${1:-16}
-
-ID=$(id -u $(whoami))
-
-docker build --build-arg VERSION=${VERSION} --build-arg UID=${ID} -t upthrust/jenkins-agent:node${VERSION} .

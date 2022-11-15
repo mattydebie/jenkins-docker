@@ -1,12 +1,9 @@
-FROM jenkins/agent
+FROM upthrust/jenkins-agent
 ARG VERSION=8.0
-ARG UID=1000
 
 USER root
-RUN usermod -u ${UID} jenkins
-
 # Add repos
-RUN apt-get update && apt-get install -y wget gnupg lsb-release ssh zip &&\
+RUN apt-get update &&\
     wget -qO - https://packages.sury.org/php/apt.gpg | apt-key add - &&\
     echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/sury-php.list &&\
     apt-get update && apt-get install -y php${VERSION} php${VERSION}-mbstring php${VERSION}-xml php${VERSION}-gd php${VERSION}-curl php${VERSION}-zip &&\

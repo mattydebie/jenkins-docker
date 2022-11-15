@@ -1,12 +1,10 @@
 FROM jenkins/agent
 ARG VERSION=16
-ARG UID=1000
 
 USER root
-RUN usermod -u ${UID} jenkins
 
 # Add repos
-RUN apt-get update && apt-get install -y wget curl gnupg lsb-release ssh zip &&\
+RUN apt-get update &&\
     curl -sL https://deb.nodesource.com/setup_${VERSION}.x | bash - &&\
 \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add &&\
